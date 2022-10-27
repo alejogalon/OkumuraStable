@@ -118,6 +118,7 @@ class _ShowOnlyState extends State<ShowOnly> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
                                         ExpandableText(
+                                            size: Dimensions.font16,
                                             text: recommendedProduct.recommendedProductList[index].description!
                                           // text: 'Lorem ipsum dolor sit amet,t clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquy sit amet.',
                                         ),

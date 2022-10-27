@@ -6,6 +6,7 @@ import 'package:okumurastableforowner/utils/colors.dart';
 import 'package:okumurastableforowner/utils/dimensions.dart';
 import 'package:okumurastableforowner/widgets/bigtext.dart';
 import 'package:okumurastableforowner/widgets/smalltext.dart';
+import 'package:okumurastableforowner/widgets/translator_widget.dart';
 
 // void main() => runApp(const Login());
 
@@ -51,15 +52,11 @@ class _LoginWidgetState extends State<LoginWidget> {
             padding: EdgeInsets.all(Dimensions.width10),
             child: Column(
               children: [
-                BigText(
-                  text: 'OKUMURA STABLE',
+                SmallText(
+                  text: 'OKUMURA STABLE \nfor Owner',
                   color: AppColors.mainBlackColor,
                   size: Dimensions.font26,
-                ),
-                BigText(
-                  text: 'for Owner',
-                  color: AppColors.mainBlackColor,
-                  size: Dimensions.font26,
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
@@ -97,8 +94,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.maincolor,
                 ),
-                child: Text('LOG IN',
-                  style: TextStyle(fontSize: Dimensions.font20),),
+                child: SmallText(text: 'LOG IN',
+                size: Dimensions.font20,
+                color: AppColors.whiteColor,),//TranslatorWidget(text: "LOG IN"),//Text("LOG IN",style: TextStyle(fontSize: Dimensions.font20),),
                 onPressed: () => {
                    Get.toNamed(RouteHelper.getToSuccessPage()),
                 }
@@ -109,11 +107,14 @@ class _LoginWidgetState extends State<LoginWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextButton(
-                child: Text(
-                  'If you cannot log in, please contact us from here',
+                child: SmallText(text: 'If you cannot log in, please contact us from here',
+                size: Dimensions.font26 / 2,
+                color: AppColors.blueColor,),
+
+        /*Text('If you cannot log in, please contact us from here',
                   style: TextStyle(fontSize: Dimensions.font26 / 2,
-                      color: AppColors.blueColor),
-                ),
+                      color: AppColors.blueColor),*/
+                //),
                 onPressed: () {
                   // Get.toNamed(RouteHelper.getToHomePage());
                 },

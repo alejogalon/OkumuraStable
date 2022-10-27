@@ -1,8 +1,10 @@
 import 'package:custom_check_box/custom_check_box.dart';
 import 'package:flutter/material.dart';
 import 'package:okumurastableforowner/utils/colors.dart';
+import 'package:okumurastableforowner/widgets/bigtext.dart';
 
 import '../../utils/dimensions.dart';
+import '../../widgets/smalltext.dart';
 class ShowOnlyUnreadCheckBox extends StatefulWidget {
   ShowOnlyUnreadCheckBox({Key? key,}) : super(key: key);
 
@@ -30,7 +32,11 @@ class _ShowOnlyUnreadCheckBoxState extends State<ShowOnlyUnreadCheckBox> {
             });
           },
         ),
-        Text(
+        BigText(text: 'Show only unread',
+          color: AppColors.mainBlackColor,
+        size: Dimensions.font16,
+        ),
+       /* Text(
           'Show only unread',
           style: TextStyle(
             color: AppColors.mainBlackColor,
@@ -38,7 +44,7 @@ class _ShowOnlyUnreadCheckBoxState extends State<ShowOnlyUnreadCheckBox> {
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.normal,
           ),
-        ),
+        ),*/
       ],
     );
   }

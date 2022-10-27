@@ -1,13 +1,16 @@
 import 'package:get/get.dart';
 
 import '../loginpage.dart';
+import '../pages/account/account_settings.dart';
 import '../pages/home/home.dart';
 import '../pages/home/main_home.dart';
 import '../pages/home/news_from_stable.dart';
 import '../pages/home/news_stable_carousel.dart';
 import '../pages/horses/horses.dart';
+import '../pages/horses/recent_status_details_carousel.dart';
 import '../pages/link/link.dart';
 import '../pages/message/message.dart';
+import '../successaccountchanges.dart';
 import '../successlogin.dart';
 
 class RouteHelper{
@@ -21,8 +24,12 @@ class RouteHelper{
   static const String messagepage = "/message";
   //LINK PAGE
   static const String linkpage = "/link";
-  //HORSE STABLE PAGE
+  //HORSE STABLE DETAILS LIST PAGE
   static const String horsestablepage = "/horsestable";
+  static const String horsestablelistpage = "/horsestablelist";
+  //ACCOUNT SETTINGS PAGE
+  static const String accountsettingspage = "/accountsettings";
+  static const String successaccountsettingspage = "/successaccountsettings";
   /*static const String abouthorsespage = "/abouthorses";
   static const String aboutstablespage = "/aboutstables";
   static const String aboutmasterspage = "/aboutmasters";
@@ -37,8 +44,12 @@ class RouteHelper{
   static String getMessagePage()=>'$messagepage';
   //LINK
   static String getLinkPage()=>'$linkpage';
-  //HORSESTABLE
+  //HORSESTABLE DETAILS LIST
   static String getHorseStablePage()=>'$horsestablepage';
+  static String getHorseStableListPage()=>'$horsestablelistpage';
+  //ACCOUNT SETTINGS
+  static String getAccountSettingsPage()=>'$accountsettingspage';
+  static String getSuccessAccountSettingsPage()=>'$successaccountsettingspage';
   /*static String getToAboutHorsesPage()=>'$abouthorsespage';
   static String getToAboutStablesPage()=>'$aboutstablespage';
   static String getToAboutMastersPage()=>'$aboutmasterspage';
@@ -67,8 +78,18 @@ class RouteHelper{
     GetPage(name:linkpage, page: ()=>LinkPage(),//HomePage(),
         transition: Transition.fadeIn
     ),
-    /////////////////////////////////LINK
+    /////////////////////////////////HORSE DETAILS LIST
     GetPage(name:horsestablepage, page: ()=>HorsesStablePage(),//HomePage(),
+        transition: Transition.fadeIn
+    ),
+    GetPage(name:horsestablelistpage, page: ()=>RecentStatusCarouselPage(),//HomePage(),
+        transition: Transition.fadeIn
+    ),
+    /////////////////////////////////ACCOUNT SETTINGS
+    GetPage(name:accountsettingspage, page: ()=>AccountSettings(),//HomePage(),
+        transition: Transition.fadeIn
+    ),
+    GetPage(name:successaccountsettingspage, page: ()=>SuccessAccountChangesPage(),//HomePage(),
         transition: Transition.fadeIn
     ),
     /*GetPage(name:abouthorsespage, page: ()=>AboutHorsesPage(),

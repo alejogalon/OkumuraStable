@@ -7,7 +7,8 @@ import '../utils/dimensions.dart';
 
 class ExpandableText extends StatefulWidget {
   final String text;
-  const ExpandableText({Key? key, required this.text}) : super(key: key);
+  final double size;
+  const ExpandableText({Key? key, required this.text, required this.size}) : super(key: key);
 
   @override
   State<ExpandableText> createState() => _ExpandableTextState();
@@ -16,9 +17,10 @@ class ExpandableText extends StatefulWidget {
 class _ExpandableTextState extends State<ExpandableText> {
   late String firstHalf;
   late String secondHalf;
+  late double size;
 
   bool hiddenText = true;
-  double textHeight = Dimensions.screenHeight/3.5;
+  double textHeight = Dimensions.screenHeight/8.5;
 //i love flutter laravel and golang 30
   @override
   void initState(){
@@ -37,7 +39,7 @@ class _ExpandableTextState extends State<ExpandableText> {
     return Container(
       child: secondHalf.isEmpty?SmallText(color: AppColors.paraColor, size:Dimensions.font16, text: firstHalf):Column(
         children: [
-          SmallText(height: 1.8, color:AppColors.paraColor , size: Dimensions.font16, text: hiddenText?(firstHalf+"..."):(firstHalf+secondHalf)),
+          SmallText(height: 1.8, color:AppColors.paraColor , size: widget.size, text: hiddenText?(firstHalf+"..."):(firstHalf+secondHalf)),
           InkWell(
             onTap: (){
               setState(() {

@@ -10,6 +10,8 @@ import '../../routes/routerhelper.dart';
 import '../../utils/colors.dart';
 import '../../widgets/bigtext.dart';
 import '../../widgets/icons_and_text.dart';
+import '../../widgets/smalltext.dart';
+import '../account/account_profile_top_icon.dart';
 
 
 
@@ -33,9 +35,11 @@ class _MessagePageState extends State<MessagePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text("Message"),
-                Icon(FontAwesome5.user_circle,
-                )
+                SmallText(text:"Message",
+                  color: AppColors.whiteColor,
+                  size: Dimensions.font20,),
+                AccountProfileIcon(icon: FontAwesome5.user_circle,
+                  iconSize: Dimensions.height30,),
               ],
             )),
         backgroundColor: AppColors.maincolor,
@@ -53,13 +57,16 @@ class _MessagePageState extends State<MessagePage> {
                 ),
                 Image(image: ExactAssetImage('assets/image/message.PNG'),),
                 SizedBox(height: Dimensions.height45),
-                Text(
+                SmallText(text: 'Please add friends from the QR code',
+                color: AppColors.kMidGreen,
+                size: Dimensions.font16,),
+                /*Text(
                   'Please add friends from the QR code',
                   style: TextStyle(
                       color: Colors.green,
                       fontSize: 16,
                       fontWeight: FontWeight.bold), //TextStyle
-                ),
+                ),*/
                 SizedBox(
                   height: 5,
                 ),
@@ -67,13 +74,9 @@ class _MessagePageState extends State<MessagePage> {
                 SizedBox(
                   height: 5,
                 ),
-                Text(
-                  'The LINE app will launch.',
-                  style: TextStyle(
-                      color: Colors.green,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold), //TextStyle
-                ), //Text
+                SmallText(text: 'The LINE app will launch.',
+                  color: AppColors.kMidGreen,
+                  size: Dimensions.font16,),
               ], //<Widget>[]
             ), //Padding
           ), //Banner
@@ -96,13 +99,13 @@ class _MessagePageState extends State<MessagePage> {
                     onTap: (){
                       Get.toNamed(RouteHelper.getHorseStablePage());
                     },
-                    child: IconAndTextWidget(icon: Icons.person, text: "Aisha", iconColor: AppColors.buttonBackgroundColor)),
+                    child: IconAndTextWidget(icon: FontAwesome5.horse_head, text: "Aisha", iconColor: AppColors.buttonBackgroundColor)),
                 GestureDetector(
                   onTap: (){
                     Get.toNamed(RouteHelper.getNewsFromStablePage());
                   },
                   child: IconAndTextWidget(icon: Icons.newspaper_rounded, text: "News", iconColor: AppColors.buttonBackgroundColor)),
-                IconAndTextWidget(icon: Icons.message_rounded, text: "Message", iconColor: AppColors.maincolor),
+                IconAndTextWidget(icon: Icons.message_rounded, text: "Message", iconColor: AppColors.signColor),
                 GestureDetector(
                     onTap: (){
                       Get.toNamed(RouteHelper.getLinkPage());

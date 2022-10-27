@@ -68,7 +68,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                     SizedBox(height: Dimensions.height20,),
                     Align(
                       alignment: Alignment.bottomCenter,
-                      child: BigText(text: "You are now logged!"),
+                      child: SmallText(text: "You are now logged!",
+                        size: Dimensions.font20,
+                        color: AppColors.mainBlackColor,),
                     ),
                     SizedBox(height: Dimensions.height45,),
                     Container(
@@ -79,8 +81,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.maincolor,
                           ),
-                          child: Text('Start the app',
-                            style: TextStyle(fontSize: Dimensions.font20),),
+                          child: SmallText(text: 'Start the app',
+                          size: Dimensions.font20,
+                            color: AppColors.whiteColor,),/*Text('Start the app',
+                            style: TextStyle(fontSize: Dimensions.font20),),*/
                           onPressed: () => {
                             Get.toNamed(RouteHelper.getToHomePage())
                           }
@@ -95,11 +99,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   TextButton(
-                    child: Text(
-                      'If you cannot log in, please contact us from here',
-                      style: TextStyle(fontSize: Dimensions.font26 / 2,
-                          color: AppColors.blueColor),
-                    ),
+                    child: SmallText(text: 'If you cannot log in, please contact us from here',
+                      size: Dimensions.font26 / 2,
+                      color: AppColors.blueColor,),
                     onPressed: () {
                        Get.toNamed(RouteHelper.getToHomePage());
                     },

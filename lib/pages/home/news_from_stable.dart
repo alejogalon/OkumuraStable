@@ -10,6 +10,8 @@ import '../../routes/routerhelper.dart';
 import '../../utils/colors.dart';
 import '../../widgets/bigtext.dart';
 import '../../widgets/icons_and_text.dart';
+import '../../widgets/smalltext.dart';
+import '../account/account_profile_top_icon.dart';
 import 'news_from_stable_list.dart';
 
 
@@ -34,9 +36,11 @@ class _NewsFromStablePageState extends State<NewsFromStablePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text("News from the stable"),
-                Icon(FontAwesome5.user_circle,
-                )
+                SmallText(text:"News from the stable",
+                  color: AppColors.whiteColor,
+                  size: Dimensions.font20,),
+                AccountProfileIcon(icon: FontAwesome5.user_circle,
+                  iconSize: Dimensions.height30,),
               ],
             )),
         backgroundColor: AppColors.maincolor,
@@ -86,8 +90,8 @@ class _NewsFromStablePageState extends State<NewsFromStablePage> {
                     onTap: (){
                       Get.toNamed(RouteHelper.getHorseStablePage());
                     },
-                    child: IconAndTextWidget(icon: Icons.person, text: "Aisha", iconColor: AppColors.buttonBackgroundColor)),
-                IconAndTextWidget(icon: Icons.newspaper_rounded, text: "News", iconColor: AppColors.maincolor),
+                    child: IconAndTextWidget(icon: FontAwesome5.horse_head, text: "Aisha", iconColor: AppColors.buttonBackgroundColor)),
+                IconAndTextWidget(icon: Icons.newspaper_rounded, text: "News", iconColor: AppColors.signColor),
                 GestureDetector(
                     onTap: (){
                       Get.toNamed(RouteHelper.getMessagePage());

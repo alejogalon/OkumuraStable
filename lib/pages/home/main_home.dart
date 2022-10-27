@@ -11,6 +11,7 @@ import '../../widgets/bigtext.dart';
 import '../../widgets/dropdown_horses.dart';
 import '../../widgets/icons_and_text.dart';
 import '../../widgets/smalltext.dart';
+import '../account/account_profile_top_icon.dart';
 import 'home.dart';
 import 'home_two.dart';
 
@@ -40,9 +41,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text("OKUMURA STABLE\nFor Owners"),
-                Icon(FontAwesome5.user_circle,
-                )
+                SmallText(text:"OKUMURA STABLE\nFor Owners",
+                color: AppColors.whiteColor,
+                size: Dimensions.font20,),
+                AccountProfileIcon(icon: FontAwesome5.user_circle,
+                iconSize: Dimensions.height30,),
               ],
             )),//const Text("OKUMURA STABLE\nFor Owners"),
         backgroundColor: AppColors.maincolor,
@@ -88,12 +91,12 @@ class _MainFoodPageState extends State<MainFoodPage> {
             child:  Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconAndTextWidget(icon: Icons.home_filled, text: "Home", iconColor: AppColors.maincolor),
+                IconAndTextWidget(icon: Icons.home_filled, text: "Home", iconColor: AppColors.signColor),
                 GestureDetector(
                     onTap: (){
                       Get.toNamed(RouteHelper.getHorseStablePage());
                     },
-                    child: IconAndTextWidget(icon: Icons.person, text: "Aisha", iconColor: AppColors.buttonBackgroundColor)),
+                    child: IconAndTextWidget(icon: FontAwesome5.horse_head, text: "Aisha", iconColor: AppColors.buttonBackgroundColor)),
                 GestureDetector(
                     onTap: (){
                       Get.toNamed(RouteHelper.getNewsFromStablePage());

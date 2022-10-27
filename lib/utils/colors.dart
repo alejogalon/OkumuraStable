@@ -9,6 +9,7 @@ class AppColors{
   static final Color paraColor = const Color(0xFF8f837f);
   static final Color bottomNavColor = const Color(0xffccd7d7);
   static final Color buttonBackgroundColor = const Color(0xFFf7f6f4);
+  static final Color whiteColor = const Color(0xffffffff);
   static final Color signColor = const Color(0xFFa9a29f);
   static final Color titleColor = const Color(0xFF5c524f);
   static final Color mainBlackColor = const Color(0xFF332d2b);
@@ -18,6 +19,7 @@ class AppColors{
   static final Color orangeColor = const Color(0xffaf6200);
   static final Color brownColor = const Color(0xff522b00);
   static final Color blueColor = const Color(0xff002cff);
+  static final Color lightblueColor = const Color(0xff76c1ff);
   static final Color orangeLightColor = Color.fromRGBO(241, 135, 13, 1.0);
 
 

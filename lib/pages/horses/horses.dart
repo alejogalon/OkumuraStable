@@ -12,7 +12,10 @@ import '../../utils/colors.dart';
 import '../../widgets/bigtext.dart';
 import '../../widgets/dropdown_horses.dart';
 import '../../widgets/icons_and_text.dart';
+import '../../widgets/smalltext.dart';
+import '../account/account_profile_top_icon.dart';
 import '../home/home_two.dart';
+import 'list_dposit.dart';
 
 
 
@@ -34,11 +37,11 @@ class _HorsesStablePageState extends State<HorsesStablePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Recent status of beloved horse",style: TextStyle(
-                    fontSize: Dimensions.font16,
-                  ),),
-                  Icon(FontAwesome5.user_circle,
-                  )
+                  SmallText(text:"Recent status of beloved horse",
+                    color: AppColors.whiteColor,
+                    size: Dimensions.font16,),
+                  AccountProfileIcon(icon: FontAwesome5.user_circle,
+                    iconSize: Dimensions.height30,),
                 ],
               )),
           backgroundColor: AppColors.maincolor,
@@ -66,7 +69,7 @@ class _HorsesStablePageState extends State<HorsesStablePage> {
             ),
             //body
             Expanded(child: SingleChildScrollView(
-              child: ShowOnly(),
+              child: ListDeposit(),//ShowOnly(),
             ))
           ],
         ),
@@ -83,7 +86,7 @@ class _HorsesStablePageState extends State<HorsesStablePage> {
                       Get.toNamed(RouteHelper.getToHomePage());
                     },
                     child: IconAndTextWidget(icon: Icons.home_filled, text: "Home", iconColor: AppColors.buttonBackgroundColor)),
-                IconAndTextWidget(icon: Icons.person, text: "Aisha", iconColor: AppColors.maincolor),
+                IconAndTextWidget(icon: FontAwesome5.horse_head, text: "Aisha", iconColor: AppColors.signColor),
                 GestureDetector(
                     onTap: (){
                       Get.toNamed(RouteHelper.getNewsFromStablePage());

@@ -11,8 +11,10 @@ import '../../routes/routerhelper.dart';
 import '../../utils/app_constants.dart';
 import '../../utils/colors.dart';
 import '../../widgets/bigtext.dart';
+import '../../widgets/expandable_text.dart';
 import '../../widgets/icons_and_text.dart';
 import '../../widgets/smalltext.dart';
+import '../account/account_profile_top_icon.dart';
 
 
 
@@ -36,9 +38,11 @@ class _LinkPageState extends State<LinkPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Link"),
-                  Icon(FontAwesome5.user_circle,
-                  )
+                  SmallText(text:"Link",
+                    color: AppColors.whiteColor,
+                    size: Dimensions.font20,),
+                  AccountProfileIcon(icon: FontAwesome5.user_circle,
+                    iconSize: Dimensions.height30,),
                 ],
               )),
           backgroundColor: AppColors.maincolor,
@@ -72,8 +76,8 @@ class _LinkPageState extends State<LinkPage> {
                                     image: DecorationImage(
                                         fit: BoxFit.cover,
                                         image: ExactAssetImage(
-                                            "assets/image/jew.jpg"
-                                          // AppConstants.BASE_URL+AppConstants.UPLOAD_URL+recommendedProduct.recommendedProductList[index].img!
+                                            //"assets/image/jew.jpg"
+                                          "assets"+AppConstants.UPLOAD_URL+recommendedProduct.recommendedProductList[index].img!
                                         )
                                     ),
                                   ),
@@ -96,7 +100,7 @@ class _LinkPageState extends State<LinkPage> {
                                       children: [
                                         BigText(text: recommendedProduct.recommendedProductList[index].name!),
                                         SizedBox(height: Dimensions.height10,),
-                                        SmallText(text: "lorem impsum dolore  um do dolore um dolore um do dolore um dolore um dolore um dolore um JRA Japan "),
+                                        ExpandableText(size:Dimensions.font16 ,text: recommendedProduct.recommendedProductList[index].description!),
                                         Row(
                                           mainAxisAlignment: MainAxisAlignment.end,
                                           children: [
@@ -106,8 +110,9 @@ class _LinkPageState extends State<LinkPage> {
                                                   style: ElevatedButton.styleFrom(
                                                     backgroundColor: AppColors.maincolor,
                                                   ),
-                                                  child: Text('See this site',
-                                                    style: TextStyle(fontSize: Dimensions.font16),),
+                                                  child: SmallText(text: 'See this site',
+                                                  color: AppColors.whiteColor,), /*Text('See this site',
+                                                    style: TextStyle(fontSize: Dimensions.font16),),*/
                                                   onPressed: () => {
                                                     Get.toNamed(RouteHelper.getToHomePage())
                                                   }
@@ -150,7 +155,7 @@ class _LinkPageState extends State<LinkPage> {
                     onTap: (){
                       Get.toNamed(RouteHelper.getHorseStablePage());
                     },
-                    child: IconAndTextWidget(icon: Icons.person, text: "Aisha", iconColor: AppColors.buttonBackgroundColor)),
+                    child: IconAndTextWidget(icon: FontAwesome5.horse_head, text: "Aisha", iconColor: AppColors.buttonBackgroundColor)),
                 GestureDetector(
                     onTap: (){
                       Get.toNamed(RouteHelper.getNewsFromStablePage());
@@ -161,7 +166,7 @@ class _LinkPageState extends State<LinkPage> {
                       Get.toNamed(RouteHelper.getMessagePage());
                     },
                     child: IconAndTextWidget(icon: Icons.message_rounded, text: "Message", iconColor: AppColors.buttonBackgroundColor)),
-                IconAndTextWidget(icon: Icons.link, text: "LINK", iconColor: AppColors.maincolor)
+                IconAndTextWidget(icon: Icons.link, text: "LINK", iconColor: AppColors.signColor)
               ],
             )
         )//Center

@@ -97,7 +97,6 @@ class _NewsFromStableListState extends State<NewsFromStableList> {
                             ),*/
                             //text container
                             Expanded(child: Container(
-                              height: 250,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(Dimensions.width10),
                                 color: Colors.white,
@@ -158,6 +157,7 @@ class _NewsFromStableListState extends State<NewsFromStableList> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
                                         ExpandableText(
+                                            size: Dimensions.font16,
                                             text: recommendedProduct.recommendedProductList[index].description!
                                         ),
                                       ],

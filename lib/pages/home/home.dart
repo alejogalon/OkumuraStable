@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:okumurastableforowner/utils/dimensions.dart';
+import 'package:okumurastableforowner/widgets/smalltext.dart';
 
 import '../../utils/colors.dart';
 import '../../widgets/bigtext.dart';
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
     // drawer: NavigationDrawer(),
     appBar: AppBar(
       automaticallyImplyLeading: false,
-      title: const Text("OKUMURA STABLE\nFor Owners"),
+      title: SmallText(text:"OKUMURA STABLE\nFor Owners"),// Text("OKUMURA STABLE\nFor Owners"),
       backgroundColor: AppColors.maincolor,
     ),
     body: Padding(
